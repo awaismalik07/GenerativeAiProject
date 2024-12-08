@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  notebook1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NOTEBOOK: AbstractArtGeneratorDCGAN.ipynb
+    ports:
+      - "8881:8888"
+    volumes:
+      - .:/app/notebooks
+
+  notebook2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NOTEBOOK: AbstractArtGeneratorDCGAN2.ipynb
+    ports:
+      - "8882:8888"
+    volumes:
+      - .:/app/notebooks
+
+  notebook3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NOTEBOOK: AbstractArtGeneratorGAN.ipynb
+    ports:
+      - "8883:8888"
+    volumes:
+      - .:/app/notebooks
